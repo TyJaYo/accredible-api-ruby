@@ -9,7 +9,7 @@ The Accredible platform lets you automatically create, manage, and distribute di
 
 Digital certificates and badges help maximize the value from your training or certification program. Digital credentials are more accessible and share-able via social media, directing interested viewers back towards your learners’ achievements and your course website. Track recipient engagement to see shares, additional traffic to your webpage. And, allow students to save and print a PDF for their wall at home.
 
-This gem wraps the Accredible API in Ruby for easy integration into projects. The full REST API documentation can be found here: http://docs.accrediblecredentialapi.apiary.io/ 
+This gem wraps the Accredible API in Ruby for easy integration into projects. The full REST API documentation can be found here: [https://docs.api.accredible.com](https://docs.api.accredible.com/).
 
 We forked the original by sublimecoder so that we can provide updates without interfering with their active usage. This repository and gem are the officially maintained Ruby wrappers for Accredible.
 
@@ -77,21 +77,21 @@ Accredible::Credential.create(
     evidence: evidence,
     references: references)
 
-#updating a credential
-credential = {reciopient: {name: "Updated Name"}}
+# updating a credential
+credential = {recipient: {name: "Updated Name"}}
 Accredible::Credential.update(id:"1234", credential: {name: "new credential name"})
 
-#deleting a credential
+# deleting a credential
 cred = Accredible::Credential.delete("1234")
 
-#for viewing all credentials
+# for viewing all credentials
 groups = Accredible::Credential.view_all(group_id: "1234", email: "student@example.com")
 
 # creating a group
 group = 
   {
         "name": "new group",
-        "course_name": "Intro to Prgramming",
+        "course_name": "Intro to Programming",
         "course_description": "Description of course",
         "course_link": "http://www.example.com",
         "language": "en",
@@ -103,19 +103,19 @@ Accredible::Group.create(
     group: group, 
     design_id: 12)
 
-#updating a group
+# updating a group
 Accredible::Group.update(group_id:"1234", group: {name: "new group name"})
 
-#deleting a group
+# deleting a group
 Accredible::Group.delete(group_id:"1234")
 
-#for viewing a group
+# for viewing a group
 Accredible::Group.view("1234")
 
-#for viewing all groups
+# for viewing all groups
 groups = Accredible::Group.view_all
 
-#for viewing all designs
+# for viewing all designs
 designs = Accredible::Design.view_all
 
 ```
@@ -133,7 +133,7 @@ https://github.com/accredible/accredible-api-ruby/issues
 
 License
 -------
-Accredible-API-Ruby is is free software, and may be redistributed under the 
+Accredible-API-Ruby is free software, and may be redistributed under the 
 terms specified in the [LICENSE](/LICENSE) file.
 
 Thanks to
